@@ -5,4 +5,10 @@ package com.phigames.phiadvent.loaders;
  */
 
 public class AnimationData {
+    public String textureName;
+    public float frameDuration;
+    public int cellWidth;
+    public int cellHeight;
+    int[][] frames;
+    int animationPlayMode;
 }

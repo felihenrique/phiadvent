@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="32" tileheight="32" nextobjectid="1">
+ <tileset firstgid="1" name="mountain_landscape2" tilewidth="32" tileheight="32" spacing="2" tilecount="256">
+  <image source="../textures/mountain_landscape2.png" width="544" height="544"/>
+ </tileset>
+ <layer name="ground1" width="30" height="30">
+  <data encoding="base64" compression="zlib">
+   eJztwwENAAAMw6A6nH83F3JIWDVVVVXfPX31Fcw=
+  </data>
+ </layer>
+ <layer name="ground2" width="30" height="30">
+  <data encoding="base64" compression="zlib">
+   eJztwQEBAAAAgiD/r25IQAEAAPBoDhAAAQ==
+  </data>
+ </layer>
+ <layer name="structures1" width="30" height="30">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMAoGJzgzQPbeGSB7CYHR8KAewBWWtA5jXGE5HMN4pAB8aYaW6QlfmkGXGy07KAfDOQwBNL4NQQ==
+  </data>
+ </layer>
+ <layer name="structures2" width="30" height="30">
+  <data encoding="base64" compression="zlib">
+   eJztwQEBAAAAgiD/r25IQAEAAPBoDhAAAQ==
+  </data>
+ </layer>
+ <layer name="overplayer1" width="30" height="30">
+  <data encoding="base64" compression="zlib">
+   eJztwQEBAAAAgiD/r25IQAEAAPBoDhAAAQ==
+  </data>
+ </layer>
+ <layer name="overplayer2" width="30" height="30">
+  <data encoding="base64" compression="zlib">
+   eJztwQEBAAAAgiD/r25IQAEAAPBoDhAAAQ==
+  </data>
+ </layer>
+</map>

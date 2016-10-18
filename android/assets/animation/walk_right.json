@@ -1,0 +1,12 @@
+{
+    "textureName": "textures/char.png",
+    "frameDuration": 0.25,
+    "cellWidth": 32,
+    "cellHeight": 48,
+    "frames": [
+     [1, 2],
+     [2, 2],
+     [3, 2]
+    ],
+    "animationPlayMode": 2
+}
