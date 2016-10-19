@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="32" tileheight="32" nextobjectid="21">
- <tileset firstgid="1" name="mountain_landscape2" tilewidth="32" tileheight="32" spacing="2" tilecount="256">
-  <image source="../textures/mountain_landscape2.png" width="544" height="544"/>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="32" tileheight="32" nextobjectid="26">
+ <tileset firstgid="1" name="montanha" tilewidth="32" tileheight="32" tilecount="256">
+  <image source="../textures/mountain_landscape.png" width="512" height="512"/>
  </tileset>
  <layer name="ground1" width="30" height="30">
   <data encoding="base64" compression="zlib">
-   eJztwwENAAAMw6A6nH83F3JIWDVVVVXfPX31Fcw=
+   eJztzzERACAMBMF3GByAfxVERaDY4ubqrSSrq+Hv7jz4tJOXl5eXl5eXl5eXl/dX7wVHuTOu
   </data>
  </layer>
  <layer name="ground2" width="30" height="30">
@@ -19,7 +19,7 @@
    <property name="systemsActive" value="AnimUpdateSystem;MoveAnimSelectorSystem;MovementSystem;PlayerInputSystem"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjIJRMAoGJzgzQPbeGSB7CYHR8KAewBWWtA5jXGE5HMN4pAB8aYaW6QlfmkGXGy07KAfDOQwBNL4NQQ==
+   eJxjYBgFo2AUjIJRMAqGHrg7QGa+pYG95JhJC/8TYy4t/E9Lc4cKoFV8EgLo4T5Y3DEcwSsgfj0A9v4C4t8DYC+1ASlpk5rpmJS0OVTzEwCJpxPl
   </data>
  </layer>
  <layer name="structures2" width="30" height="30">
@@ -29,29 +29,24 @@
  </layer>
  <layer name="overplayer1" width="30" height="30">
   <data encoding="base64" compression="zlib">
-   eJztwQEBAAAAgiD/r25IQAEAAPBoDhAAAQ==
+   eJztzTERADAIADH8S2sdUDNFBTAkdz9/BAAA9DrVHfhm9Qa+sNUH5a4DSw==
   </data>
  </layer>
  <layer name="overplayer2" width="30" height="30">
   <data encoding="base64" compression="zlib">
-   eJztzTEBAAAIA6D1z2YEw/hbwEMoQAIA8FMdvX30AmwD/JkBqQ==
+   eJztwQEBAAAAgiD/r25IQAEAAPBoDhAAAQ==
   </data>
  </layer>
  <objectgroup name="entities">
-  <object id="3" name="enemy" gid="253" x="73" y="773" width="32" height="32">
+  <object id="23" name="player_spawn" gid="253" x="144" y="781" width="32" height="32"/>
+  <object id="24" name="enemy" gid="253" x="258" y="716" width="32" height="32">
    <properties>
     <property name="path" value="entities/enemy.json"/>
    </properties>
   </object>
-  <object id="10" name="player_spawn" gid="253" x="161" y="776" width="32" height="32"/>
-  <object id="16" name="enemy" gid="253" x="244" y="776" width="32" height="32">
+  <object id="25" name="world_configuration" gid="253" x="257" y="849" width="32" height="32">
    <properties>
-    <property name="path" value="entities/enemy2.json"/>
-   </properties>
-  </object>
-  <object id="17" name="world_configuration" gid="253" x="267" y="893" width="32" height="32">
-   <properties>
-    <property name="activesystems" value="AnimUpdateSystem;MoveAnimSelectorSystem;MovementSystem;PlayerInputSystem;CollisionSystem"/>
+    <property name="activesystems" value="AnimUpdateSystem;MoveAnimSelectorSystem;MovementSystem;PlayerInputSystem;"/>
    </properties>
   </object>
  </objectgroup>

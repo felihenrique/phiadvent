@@ -3,20 +3,12 @@ package com.phigames.phiadvent;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.EntitySystem;
 import com.badlogic.ashley.core.PooledEngine;
-import com.badlogic.gdx.maps.MapLayer;
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.MapObjects;
-import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.math.Vector2;
 import com.phigames.phiadvent.components.CCamera;
 import com.phigames.phiadvent.components.CSprite;
 import com.phigames.phiadvent.loaders.EntityFactory;
-import com.phigames.phiadvent.systems.AnimUpdateSystem;
-import com.phigames.phiadvent.systems.CameraSystem;
-import com.phigames.phiadvent.systems.CollisionSystem;
-import com.phigames.phiadvent.systems.MoveAnimSelectorSystem;
-import com.phigames.phiadvent.systems.MovementSystem;
-import com.phigames.phiadvent.systems.PlayerInputSystem;
 import com.phigames.phiadvent.systems.RenderSystem;
 
 public class SceneManager {
@@ -30,7 +22,6 @@ public class SceneManager {
         cameraComponent = new CCamera();
         camera.add(cameraComponent);
         world.addEntity(camera);
-        world.addSystem(new CameraSystem());
         world.addSystem(new RenderSystem());
         initialized = true;
     }

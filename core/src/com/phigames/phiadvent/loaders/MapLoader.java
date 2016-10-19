@@ -1,5 +1,6 @@
 package com.phigames.phiadvent.loaders;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.utils.ObjectMap;
@@ -16,7 +17,11 @@ public class MapLoader {
         if (maps.containsKey(path)) {
             return maps.get(path);
         } else {
-            TiledMap map = new TmxMapLoader().load(path);
+            TmxMapLoader loader = new TmxMapLoader();
+            TmxMapLoader.Parameters param = new TmxMapLoader.Parameters();
+            param.textureMinFilter = Texture.TextureFilter.Nearest;
+            param.textureMagFilter = Texture.TextureFilter.Nearest;
+            TiledMap map = loader.load(path);
             maps.put(path, map);
             return map;
         }
