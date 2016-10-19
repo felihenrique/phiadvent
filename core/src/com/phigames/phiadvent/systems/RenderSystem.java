@@ -36,15 +36,11 @@ public class RenderSystem extends EntitySystem {
         initialize();
     }
 
-    public SpriteBatch getBatch() {
-        return batch;
-    }
-
     protected void initialize() {
         batch = new SpriteBatch();
         mSprite = ComponentMapper.getFor(CSprite.class);
         mAnim = ComponentMapper.getFor(CAnim.class);
-        setCurrentMap("maps/principal.tmx");
+        renderFamily = Family.all(CSprite.class).get();
     }
 
     public void setCurrentMap(String mapPath) {
@@ -56,7 +52,6 @@ public class RenderSystem extends EntitySystem {
         currentMap = MapLoader.load(mapPath);
         currentMapPath = mapPath;
         mapRenderer = new OrthogonalTiledMapRenderer(currentMap);
-        renderFamily = Family.all(CSprite.class).get();
     }
 
     public TiledMap getCurrentMap() {
@@ -91,8 +86,9 @@ public class RenderSystem extends EntitySystem {
         final CAnim anim = mAnim.get(entity);
         if (anim.getCurrent() == null) return;
         final TextureRegion region = anim.getCurrent().getKeyFrame(anim.timeElapsed);
+
         batch.setColor(spr.sprColor);
-        batch.draw(region, spr.position.x, spr.position.y, spr.anchor.x, spr.anchor.y,
+        batch.draw(region, (int)spr.position.x, (int)spr.position.y, spr.anchor.x, spr.anchor.y,
                 region.getRegionWidth(), region.getRegionHeight(), spr.scale.x, spr.scale.y,
                 spr.rotation);
     }

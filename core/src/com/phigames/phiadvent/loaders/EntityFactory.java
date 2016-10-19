@@ -11,19 +11,20 @@ import com.phigames.phiadvent.components.CSprite;
 public class EntityFactory {
     private static Json json = new Json();
 
-    public static Entity createEnemy(String path) {
+    public static Entity createEntity(String path, Vector2 position) {
         Entity ent = SceneManager.getWorld().createEntity();
         Component[] components = json.fromJson(Component[].class, Gdx.files.internal(path));
         for (Component c: components) {
             ent.add(c);
         }
+        ent.getComponent(CSprite.class).position = position;
         SceneManager.getWorld().addEntity(ent);
         return ent;
     }
 
-    public static Entity createPlayer() {
+    public static Entity createPlayer(String path) {
         Entity ent = SceneManager.getWorld().createEntity();
-        Component[] components = json.fromJson(Component[].class, Gdx.files.internal("entities/player.json"));
+        Component[] components = json.fromJson(Component[].class, Gdx.files.internal(path));
         for (Component c: components) {
             ent.add(c);
         }

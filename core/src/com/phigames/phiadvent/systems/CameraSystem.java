@@ -45,6 +45,6 @@ public class CameraSystem extends IteratingSystem {
                 Gdx.graphics.getWidth() / 2);
         float pos_y = MathUtils.clamp(pos.y, Gdx.graphics.getHeight() / 2, pro.get("height", Integer.class) * 32 -
                 Gdx.graphics.getHeight() / 2);
-        camera.cam.position.lerp(new Vector3(pos_x, pos_y, 0), deltaTime * 7);
+        camera.cam.position.lerp(new Vector3((int)pos_x, (int)pos_y, 0), deltaTime * 7);
     }
 }

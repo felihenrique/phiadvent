@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="32" tileheight="32" nextobjectid="1">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="32" tileheight="32" nextobjectid="21">
  <tileset firstgid="1" name="mountain_landscape2" tilewidth="32" tileheight="32" spacing="2" tilecount="256">
   <image source="../textures/mountain_landscape2.png" width="544" height="544"/>
  </tileset>
@@ -14,6 +14,10 @@
   </data>
  </layer>
  <layer name="structures1" width="30" height="30">
+  <properties>
+   <property name="systemNonActive" value="CollisionSystem"/>
+   <property name="systemsActive" value="AnimUpdateSystem;MoveAnimSelectorSystem;MovementSystem;PlayerInputSystem"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBgFo2AUjIJRMAoGJzgzQPbeGSB7CYHR8KAewBWWtA5jXGE5HMN4pAB8aYaW6QlfmkGXGy07KAfDOQwBNL4NQQ==
   </data>
@@ -30,7 +34,25 @@
  </layer>
  <layer name="overplayer2" width="30" height="30">
   <data encoding="base64" compression="zlib">
-   eJztwQEBAAAAgiD/r25IQAEAAPBoDhAAAQ==
+   eJztzTEBAAAIA6D1z2YEw/hbwEMoQAIA8FMdvX30AmwD/JkBqQ==
   </data>
  </layer>
+ <objectgroup name="entities">
+  <object id="3" name="enemy" gid="253" x="73" y="773" width="32" height="32">
+   <properties>
+    <property name="path" value="entities/enemy.json"/>
+   </properties>
+  </object>
+  <object id="10" name="player_spawn" gid="253" x="161" y="776" width="32" height="32"/>
+  <object id="16" name="enemy" gid="253" x="244" y="776" width="32" height="32">
+   <properties>
+    <property name="path" value="entities/enemy2.json"/>
+   </properties>
+  </object>
+  <object id="17" name="world_configuration" gid="253" x="267" y="893" width="32" height="32">
+   <properties>
+    <property name="activesystems" value="AnimUpdateSystem;MoveAnimSelectorSystem;MovementSystem;PlayerInputSystem;CollisionSystem"/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>
