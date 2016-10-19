@@ -1,0 +1,81 @@
+[
+{
+	"class": "com.phigames.phiadvent.components.CSprite",
+	"sprColor": {
+		"r": 1,
+		"g": 1,
+		"b": 1,
+		"a": 1
+	},
+	"position": {
+		"x": 320,
+		"y": 240
+	},
+	"scale": {
+		"x": 1,
+		"y": 1
+	},
+	"anchor": {
+		"x": 0,
+		"y": 0
+	},
+	"rotation": 0
+},
+{
+	"class": "com.phigames.phiadvent.components.CMovement",
+	"path": [
+		{
+			"x": 123.41082,
+			"y": 475.87732
+		},
+		{
+			"x": 338.92865,
+			"y": 315.3657
+		},
+		{
+			"x": 176.01874,
+			"y": 403.4791
+		},
+		{
+			"x": 94.35055,
+			"y": 18.978565
+		},
+		{
+			"x": 145.13629,
+			"y": 403.05545
+		},
+		{
+			"x": 325.50748,
+			"y": 405.18515
+		}
+	],
+	"velocity": 40,
+	"velocityVec": {
+		"x": 0,
+		"y": 0
+	},
+	"lastVelocityVec": {
+		"x": 0,
+		"y": -1
+	},
+	"walking": true,
+	"stunned": false,
+	"attacking": false
+},
+{
+	"class": "com.phigames.phiadvent.components.CAnim",
+	"currentAnim": "idle_down",
+	"animations": [
+		"walk_up",
+		"walk_right",
+		"walk_left",
+		"walk_down",
+		"idle_down",
+		"idle_up",
+		"idle_right",
+		"idle_left"
+	],
+	"timeElapsed": 0,
+	"speedMultiplier": 1.3
+}
+]

@@ -3,6 +3,8 @@ package com.phigames.phiadvent.components;
 import com.badlogic.ashley.core.Component;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
+import com.badlogic.gdx.utils.Json;
+import com.badlogic.gdx.utils.JsonValue;
 import com.badlogic.gdx.utils.Pool;
 
 /**
@@ -17,6 +19,7 @@ public class CMovement implements Component, Pool.Poolable {
     private boolean walking = false;
     private boolean stunned = false;
     private boolean attacking = false;
+
     public CMovement() { }
 
     @Override
@@ -62,10 +65,5 @@ public class CMovement implements Component, Pool.Poolable {
     public boolean isWalking() {
         return walking && !stunned && !attacking;
     }
-
     public boolean isIdle() { return !walking && !stunned && !attacking; }
-
-    public boolean isStunned() {
-        return stunned;
-    }
 }

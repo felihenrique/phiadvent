@@ -91,7 +91,7 @@ public class RenderSystem extends EntitySystem {
         final CAnim anim = mAnim.get(entity);
         if (anim.getCurrent() == null) return;
         final TextureRegion region = anim.getCurrent().getKeyFrame(anim.timeElapsed);
-        batch.setColor(spr.color);
+        batch.setColor(spr.sprColor);
         batch.draw(region, spr.position.x, spr.position.y, spr.anchor.x, spr.anchor.y,
                 region.getRegionWidth(), region.getRegionHeight(), spr.scale.x, spr.scale.y,
                 spr.rotation);

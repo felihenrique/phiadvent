@@ -15,27 +15,54 @@ import com.phigames.phiadvent.systems.RenderSystem;
 public class SceneManager {
     private static CCamera cameraComponent;
     private static PooledEngine world;
-    public static void loadScene() {
+
+    public static void initiliaze() {
         world = new PooledEngine();
-
-        Entity player = EntityFactory.createPlayer();
-
         Entity camera = world.createEntity();
-        cameraComponent = new CCamera(player);
+        cameraComponent = new CCamera();
         camera.add(cameraComponent);
         world.addEntity(camera);
-
-        EntityFactory.createEnemy();
-        EntityFactory.createEnemy();
-
-        world.addSystem(new AnimUpdateSystem());
         world.addSystem(new CameraSystem());
+        world.addSystem(new RenderSystem());
+    }
+
+    public static void loadScene() {
+        Entity player = EntityFactory.createPlayer();
+        cameraComponent.entityToFollow = player;
+        EntityFactory.createEnemy("entities/enemy.json");
+        EntityFactory.createEnemy("entities/enemy2.json");
+        world.addSystem(new AnimUpdateSystem());
         world.addSystem(new CollisionSystem());
         world.addSystem(new MoveAnimSelectorSystem());
         world.addSystem(new MovementSystem());
         world.addSystem(new PlayerInputSystem());
-        world.addSystem(new RenderSystem());
     }
+    /*
+    Exemplo Json Cena:
+    {
+        name: "City of Souls",
+        background_music: "audio/nice_music.ogg",
+        map: "maps/city_of_souls.tmx",
+        systems: [],
+        entities: [],
+        portals: [],
+    }
+    Exemplo Json Entidade:
+    {
+        components: [
+            {
+                class: "com.phigames.phiadvent.components.CAnim",
+                content: "{currentAnim:idle_down,animations:[walk_up,walk_right,
+                walk_left,walk_down,idle_down,idle_up,idle_right,idle_left],
+                timeElapsed:0,speedMultiplier:1.3}"
+            },
+            {
+                class:
+            }
+        ]
+    }
+
+     */
 
     public static PooledEngine getWorld() {
         return world;

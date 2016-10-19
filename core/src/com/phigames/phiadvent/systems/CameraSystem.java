@@ -7,8 +7,10 @@ import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.systems.IteratingSystem;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.maps.MapProperties;
+import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.math.Vector3;
 import com.phigames.phiadvent.components.CCamera;
 import com.phigames.phiadvent.components.CSprite;
 
@@ -34,16 +36,15 @@ public class CameraSystem extends IteratingSystem {
         renderSystem = getEngine().getSystem(RenderSystem.class);
         if (renderSystem.getCurrentMap() == null) return;
 
-        final MapProperties pro = renderSystem.getCurrentMap().getProperties();
         final CCamera camera = mCamera.get(entity);
+        if (camera.entityToFollow == null) return;
 
+        final MapProperties pro = renderSystem.getCurrentMap().getProperties();
         Vector2 pos = mSpr.get(camera.entityToFollow).position;
-
         float pos_x = MathUtils.clamp(pos.x, Gdx.graphics.getWidth() / 2, pro.get("width", Integer.class) * 32 -
                 Gdx.graphics.getWidth() / 2);
         float pos_y = MathUtils.clamp(pos.y, Gdx.graphics.getHeight() / 2, pro.get("height", Integer.class) * 32 -
                 Gdx.graphics.getHeight() / 2);
-
-        camera.cam.position.set((int)pos_x, (int)pos_y, 0);
+        camera.cam.position.lerp(new Vector3(pos_x, pos_y, 0), deltaTime * 7);
     }
 }

@@ -4,6 +4,7 @@ import com.badlogic.ashley.core.Component;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.Json;
 import com.badlogic.gdx.utils.JsonValue;
 import com.badlogic.gdx.utils.Pool;
@@ -16,12 +17,11 @@ public class CCamera implements Component, Pool.Poolable, Json.Serializable {
     public OrthographicCamera cam;
     public Entity entityToFollow;
     public float followSpeed;
-    public CCamera() {}
-    public CCamera(Entity entFollow) {
+    public CCamera() {
         float w = Gdx.graphics.getWidth();
         float h = Gdx.graphics.getHeight();
         cam = new OrthographicCamera(w, h);
-        entityToFollow = entFollow;
+        cam.position.set(Gdx.graphics.getWidth() / 2, Gdx.graphics.getHeight() / 2, 0);
     }
 
     @Override

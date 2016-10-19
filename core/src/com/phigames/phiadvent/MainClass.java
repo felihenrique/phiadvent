@@ -9,6 +9,7 @@ public class MainClass extends ApplicationAdapter {
 	@Override
 	public void create () {
         Gdx.gl.glClearColor(0, 0, 0, 1);
+		SceneManager.initiliaze();
         SceneManager.loadScene();
 	}
 
