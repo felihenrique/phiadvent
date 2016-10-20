@@ -4,7 +4,6 @@ import com.badlogic.ashley.core.ComponentMapper;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.EntitySystem;
 import com.badlogic.ashley.core.Family;
-import com.badlogic.ashley.systems.IteratingSystem;
 import com.badlogic.ashley.utils.ImmutableArray;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
@@ -16,16 +15,11 @@ import com.badlogic.gdx.maps.tiled.TiledMapRenderer;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.math.Vector3;
 import com.phigames.phiadvent.SceneManager;
 import com.phigames.phiadvent.components.CAnim;
 import com.phigames.phiadvent.components.CCamera;
 import com.phigames.phiadvent.components.CSprite;
 import com.phigames.phiadvent.loaders.MapLoader;
-
-/**
- * Created by labpos on 18/10/16.
- */
 
 public class RenderSystem extends EntitySystem {
 
@@ -64,6 +58,7 @@ public class RenderSystem extends EntitySystem {
     public TiledMap getCurrentMap() {
         return currentMap;
     }
+    public String getCurrentMapPath() { return currentMapPath; }
 
     @Override
     public void update(float deltaTime) {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="32" tileheight="32" nextobjectid="26">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="32" tileheight="32" nextobjectid="44">
  <tileset firstgid="1" name="montanha" tilewidth="32" tileheight="32" tilecount="256">
   <image source="../textures/mountain_landscape.png" width="512" height="512"/>
  </tileset>
@@ -19,7 +19,7 @@
    <property name="systemsActive" value="AnimUpdateSystem;MoveAnimSelectorSystem;MovementSystem;PlayerInputSystem"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjIJRMAqGHrg7QGa+pYG95JhJC/8TYy4t/E9Lc4cKoFV8EgLo4T5Y3DEcwSsgfj0A9v4C4t8DYC+1ASlpk5rpmJS0OVTzEwCJpxPl
+   eJzt0zcOwkAQhWETe2JP7IkXIPTEnnhrLgDiAtDwF6ZZrWQb+Wmx5ZE+zVbzPPba87LKKn2VQx4FFC29hLIgt4IqaqhbegNNQW4LbXTQtfQe+oLcAYYYYWzpE0wFua72DcpV7ft9zzPf3DgvsBTkrrDGxrc1zjvsBbkHHHHynY3zBVfcBNlhZj4Fub/MVOwfZq5if+XcpJTqewaV+d7/5TnSWHc8HOS+8HaQG3dFuZtx3uModzOp/9MHYo4kvQ==
   </data>
  </layer>
  <layer name="structures2" width="30" height="30">
@@ -46,8 +46,13 @@
   </object>
   <object id="25" name="world_configuration" gid="253" x="257" y="849" width="32" height="32">
    <properties>
-    <property name="activesystems" value="AnimUpdateSystem;MoveAnimSelectorSystem;MovementSystem;PlayerInputSystem;"/>
+    <property name="activesystems" value="AnimUpdateSystem;MoveAnimSelectorSystem;MovementSystem;PlayerInputSystem;MapCollisionSystem"/>
    </properties>
   </object>
  </objectgroup>
+ <layer name="collision" width="30" height="30">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2B4AnYCmJZ2ElJDC3upoWbU3lF70c0kBg+EvQMJBiqOBwugZfk5CugPBku4DxZ30BIMVPk1GMrNoQxICbvBEs6kugMAEp0BdA==
+  </data>
+ </layer>
 </map>

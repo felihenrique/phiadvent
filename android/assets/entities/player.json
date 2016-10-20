@@ -55,5 +55,10 @@
 },
 {
 	"class": "com.phigames.phiadvent.components.Player"
+},
+{
+	"class": "com.phigames.phiadvent.components.CCollider",
+	"width": 32,
+	"height": 32
 }
 ]

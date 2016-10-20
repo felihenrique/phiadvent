@@ -27,18 +27,17 @@ public class MoveAnimSelectorSystem extends IteratingSystem {
         final CMovement movement = mMovement.get(entity);
         final CAnim anim = mAnim.get(entity);
         if (movement.isWalking()) {
+            //TODO : Corrigir bug quanto vel_x e vel_y sao muito parecidos
             if (movement.velocityVec == null) return;
             final float vel_x = movement.velocityVec.x;
             final float vel_y = movement.velocityVec.y;
-            if (vel_x != 0 || vel_y != 0) {
-                if (Math.abs(vel_x) > Math.abs(vel_y)) {
-                    if (vel_x < 0) anim.setCurrent("walk_left");
-                    else anim.setCurrent("walk_right");
-                }
-                else {
-                    if (vel_y < 0) anim.setCurrent("walk_down");
-                    else anim.setCurrent("walk_up");
-                }
+            if (Math.abs(vel_x) > Math.abs(vel_y)) {
+                if (vel_x < 0) anim.setCurrent("walk_left");
+                else anim.setCurrent("walk_right");
+            }
+            else {
+                if (vel_y < 0) anim.setCurrent("walk_down");
+                else anim.setCurrent("walk_up");
             }
         } else if (movement.isIdle()) {
             final float vel_x = movement.getLastVelocityVec().x;

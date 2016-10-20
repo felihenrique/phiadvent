@@ -3,8 +3,10 @@ package com.phigames.phiadvent;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.EntitySystem;
 import com.badlogic.ashley.core.PooledEngine;
+import com.badlogic.gdx.maps.MapLayer;
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.MapObjects;
+import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.math.Vector2;
 import com.phigames.phiadvent.components.CCamera;
 import com.phigames.phiadvent.components.CSprite;
@@ -31,7 +33,6 @@ public class SceneManager {
         if (!initialized) initialiaze();
         RenderSystem rs = world.getSystem(RenderSystem.class);
         rs.setCurrentMap(path);
-
         MapObjects entities = rs.getCurrentMap().getLayers().get("entities").getObjects();
         // Configurações do jogador
         Entity player = EntityFactory.createPlayer("entities/player.json");
