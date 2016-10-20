@@ -1,5 +1,6 @@
 package com.phigames.phiadvent.loaders;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
@@ -27,6 +28,11 @@ public class MapLoader {
         }
     }
     public static void remove(String path) {
-        maps.remove(path);
+        if (maps.containsKey(path)) {
+            maps.get(path).dispose();
+            maps.remove(path);
+        } else {
+            Gdx.app.log("Not Found", "O mapa" + path + " não foi encontrado na lista");
+        }
     }
 }
